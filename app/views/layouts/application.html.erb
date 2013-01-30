@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Room Management</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body   style="background: #dedede">
+
+	<!--- head and navbar -->
+	<div class="navbar">
+
+      <div class="navbar-inner">
+      	<a class="brand" href="/"><%= image_tag('logo-trans.png') %></a>
+      </div>
+
+      	<ul class="breadcrumb">
+
+      		<li class="active"><i class="icon-home icon-white"></i> Home <span class="divider">|</span></li>
+		    <li><i class="icon-plus"></i><%= link_to " Booking ", '/' %><span class="divider">|</span></li>
+		    <li><i class="icon-wrench"></i><%= link_to " Admin ", login_path %><span class="divider">|</span></li>
+	    </ul>
+
+    </div>
+
+
+	<!--- body section -->
+	<div class="container-fluid">
+
+	  <div class="row-fluid">
+	  	<!--Sidebar content-->
+	    <div class="span3">
+	    	<div class="well">
+
+	    		<form>
+				  <fieldset>
+				    <legend><i class="icon-search"></i> Search Room</legend>
+				    <input type="text" placeholder="Date…"> <br>
+				    <input type="text" placeholder="Room…"> <br>
+				    <div class="alert alert-success" style="width:170px;">Example: วศ.301</div>
+				    <button class="btn btn-primary" type="button">Search...</button>
+				  </fieldset>
+				</form>
+
+			</div>
+
+	    </div>
+	    <!--Sidebar content-->
+
+	    <!--Body content-->
+	    <div class="span9">
+	    	<%= yield %>
+	    </div>
+	    <!--Body content-->
+	  </div>
+	</div>
+
+	<!--footer section-->
+	<div id="footer">
+		© 2012 Faculty of Engineering
+					Thammasat University
+	</div>
+
+	
+</body>
+</html>
+
