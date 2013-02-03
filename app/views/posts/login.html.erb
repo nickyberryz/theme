@@ -1,30 +1,58 @@
-<div class="well" style="margin-top:5px;">
-  <div class="alert alert-error">
-  <button type="button" class="close" data-dismiss="alert">×</button>
-  <strong>Warning!</strong> Please enter your email and username.
-</div>
+  <!--- body section -->
+  <div class="container-fluid">
+    <div class="well">
+    <div class="row-fluid">
+      <!--Sidebar content-->
+      <div class="span3">
+        
 
-  <form class="form-horizontal">
-  <div class="control-group">
-    <label class="control-label" for="inputEmail">Email</label>
-    <div class="controls">
-      <input type="email" id="inputEmail" placeholder="Email" required>
-    </div>
-  </div>
-  <div class="control-group">
-    <label class="control-label" for="inputPassword">Password</label>
-    <div class="controls">
-      <input type="password" id="inputPassword" placeholder="Password">
-    </div>
-  </div>
-  <div class="control-group">
-    <div class="controls">
-      <label class="checkbox">
-        <input type="checkbox"> Remember me
-      </label>
-      <button type="submit" class="btn btn-primary">Sign in</button>
-    </div>
-  </div>
-</form>
+          <form>
+          <fieldset>
+            <legend><i class="icon-search"></i> Search Room</legend>
+            <input type="text" placeholder="Date…"> <br>
+            <input type="text" placeholder="Room…"> <br>
+            <div class="alert alert-success" style="width:170px;">Example: วศ.301</div>
+            <button class="btn btn-primary" type="button">Search...</button>
+          </fieldset>
+        </form>
 
-</div>
+
+      </div>
+      <!--Sidebar content-->
+
+      <!--Body content-->
+      <div class="span9">
+            <div class="alert alert-error">
+            <button type="button" class="close" data-dismiss="alert">×</button>
+            <strong>Warning!</strong> Please enter your email and username.
+          </div>
+
+            <form class="form-horizontal">
+            <div class="control-group">
+              <label class="control-label" for="inputEmail">Email</label>
+              <div class="controls">
+                <input type="email" id="inputEmail" placeholder="Email" required>
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label" for="inputPassword">Password</label>
+              <div class="controls">
+                <input type="password" id="inputPassword" placeholder="Password">
+              </div>
+            </div>
+            <div class="control-group">
+              <div class="controls">
+                <label class="checkbox">
+                  <input type="checkbox"> Remember me
+                </label>
+                <button type="submit" class="btn btn-primary">Sign in</button>
+              </div>
+            </div>
+          </form>
+
+          </div>
+      </div>
+      <!--Body content-->
+    </div>
+    </div>
+  </div>

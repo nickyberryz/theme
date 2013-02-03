@@ -8,53 +8,72 @@
 </head>
 <body   style="background: #dedede">
 
+	<%if current_page?(admin_path) %>
+<div class="navbar navbar-inverse" style="position: static;">
+              <div class="navbar-inner">
+                <div class="container">
+                  <a class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-inverse-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </a>
+                  <a class="brand" href="#" style="font-size:16px;">Room Management System</a>
+                  <div class="nav-collapse collapse navbar-inverse-collapse">
+                    <ul class="nav">
+                      <li class="active"><a href="#">Main</a></li>
+                      <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Room <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                          <li><a href="#">List Room</a></li>
+                          <li><a href="#">Add Room</a></li>
+                          <li><a href="#">Edit Room</a></li>
+                          <li class="divider"></li>
+                          <li class="nav-header">Nav header</li>
+                          <li><a href="#">Separated link</a></li>
+                          <li><a href="#">One more separated link</a></li>
+                        </ul>
+                      </li>
+                    </ul>
+
+                    <ul class="nav pull-right">
+                      <li><a href="#">Welcome! admin</a></li>
+                      <li class="divider-vertical"></li>
+                      <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Setting <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                          <li><a href="#">Change Password</a></li>
+                          <li><a href="#">Login History</a></li>
+                          <li class="divider"></li>
+                          <li><a href="#">Logout</a></li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </div><!-- /.nav-collapse -->
+                </div>
+              </div><!-- /navbar-inner -->
+            </div>
+	<% end %>
+
+
 	<!--- head and navbar -->
 	<div class="navbar">
 
       <div class="navbar-inner">
       	<a class="brand" href="/"><%= image_tag('logo-trans.png') %></a>
       </div>
-
+      <% if !current_page?(admin_path)%>
       	<ul class="breadcrumb">
 
       		<li class="active"><i class="icon-home icon-white"></i> Home <span class="divider">|</span></li>
 		    <li><i class="icon-plus"></i><%= link_to " Booking ", '/' %><span class="divider">|</span></li>
 		    <li><i class="icon-wrench"></i><%= link_to " Admin ", login_path %><span class="divider">|</span></li>
 	    </ul>
+	  <% end %>
 
     </div>
 
 
-	<!--- body section -->
-	<div class="container-fluid">
-
-	  <div class="row-fluid">
-	  	<!--Sidebar content-->
-	    <div class="span3">
-	    	<div class="well">
-
-	    		<form>
-				  <fieldset>
-				    <legend><i class="icon-search"></i> Search Room</legend>
-				    <input type="text" placeholder="Date…"> <br>
-				    <input type="text" placeholder="Room…"> <br>
-				    <div class="alert alert-success" style="width:170px;">Example: วศ.301</div>
-				    <button class="btn btn-primary" type="button">Search...</button>
-				  </fieldset>
-				</form>
-
-			</div>
-
-	    </div>
-	    <!--Sidebar content-->
-
-	    <!--Body content-->
-	    <div class="span9">
-	    	<%= yield %>
-	    </div>
-	    <!--Body content-->
-	  </div>
-	</div>
+    <%= yield %>
 
 	<!--footer section-->
 	<div id="footer">

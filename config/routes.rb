@@ -4,7 +4,7 @@ Blog::Application.routes.draw do
   resources :posts
   root to: "posts#index"
   match '/login' => 'Posts#login', :as => 'login', :via => 'get'
-
+  match '/admin' => 'Posts#admin', :as => 'admin', :via => 'get'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
